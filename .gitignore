@@ -1,0 +1,13 @@
+*.js
+*.js.map
+*.swf
+*.n
+TestSuite.hx
+/.mcover
+/bin
+/.temp
+/lib
+.DS_Store
+teamcity-info.xml
+.haxelib
+/haxelib.json
