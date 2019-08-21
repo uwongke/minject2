@@ -1,5 +1,6 @@
 // See the file "LICENSE" for the full license governing this code
 
+import massive.munit.TestSuite;
 import massive.munit.client.PrintClient;
 import massive.munit.client.RichPrintClient;
 import massive.munit.client.HTTPClient;
@@ -23,14 +24,14 @@ class TestMain
 		var suites = new Array<Class<massive.munit.TestSuite>>();
 		suites.push(TestSuite);
 
-		var client = new mcover.coverage.munit.client.MCoverPrintClient();
-		var httpClient = new HTTPClient(new mcover.coverage.munit.client.MCoverSummaryReportClient());
+		var client = new PrintClient();
+		var httpClient = new HTTPClient(new SummaryReportClient());
 
 		var runner:TestRunner = new TestRunner(client);
 		runner.addResultClient(httpClient);
 		runner.addResultClient(new HTTPClient(new JUnitReportClient()));
 
-		runner.completionHandler = completionHandler;
+		runner.completionHandler = cast completionHandler;
 		runner.run(suites);
 	}
 

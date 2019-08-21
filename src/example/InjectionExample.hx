@@ -3,10 +3,8 @@
 import minject.Injector;
 import Type;
 
-class InjectionExample
-{
-	public static function main()
-	{
+class InjectionExample {
+	public static function main() {
 		var injector = new Injector();
 
 		injector.map(TypeA).asSingleton();
@@ -20,7 +18,11 @@ class InjectionExample
 		injector.map('haxe.EnumFlags<ValueType>').toValue(new haxe.EnumFlags<ValueType>());
 
 		var a = injector.getInstance(TypeA);
+		trace("+++++++++++++++++++++++++++++++++++++");
+
 		a.id = 123;
+		trace(a.id);
+		trace("+++++++++++++++++++++++++++++++++++++");
 
 		var c = new TypeC();
 		c.id = 666;
@@ -47,8 +49,7 @@ class InjectionExample
 	}
 }
 
-class Foo
-{
+class Foo {
 	@inject public var a:TypeA;
 	@inject("foo") public var b:TypeB;
 	@inject("bar") public var c:TypeB;
@@ -63,45 +64,36 @@ class Foo
 	public function new(){}
 }
 
-class TypeA
-{
+class TypeA {
 	public var id:Int;
 
-	public function new()
-	{
+	public function new() {
 		id = 0;
 	}
 
-	public function toString():String
-	{
+	public function toString():String {
 		return 'TypeA $id';
 	}
 }
 
-class TypeB
-{
+class TypeB {
 	public var id:Int;
 
-	public function new()
-	{
+	public function new() {
 		id = 0;
 	}
 
-	public function toString():String
-	{
+	public function toString():String {
 		return 'TypeB $id';
 	}
 }
 
-class TypeC extends TypeB
-{
-	public function new()
-	{
+class TypeC extends TypeB {
+	public function new() {
 		super();
 	}
 
-	override public function toString():String
-	{
+	override public function toString():String {
 		return 'TypeC $id';
 	}
 }
