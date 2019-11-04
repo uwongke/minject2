@@ -6,5 +6,6 @@
   "contributors": ["Docler", "Story Arc Media"],
   "classPath": "src/lib/",
   "url": "https://github.com/WolfieWerewolf/minject2",
-  "dependencies": {}
+  "dependencies": {},
+  "releasenote": "No release notes"
 }
