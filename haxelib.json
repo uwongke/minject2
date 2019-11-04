@@ -3,7 +3,7 @@
   "license": "MIT",
   "description": "A Haxe port of the ActionScript 3 SwiftSuspenders IOC library with efficient macro enhanced type reflection. Supports AVM1, AVM2, JavaScript, Neko and C++.",
   "version": "1.6.3",
-  "contributors": "Docler, with modifications by Story Arc Media"
+  "contributors": "Docler, with modifications by Story Arc Media",
   "classPath": "src/lib/",
   "url": "https://github.com/WolfieWerewolf/minject2",
   "dependencies": {}
